@@ -998,3 +998,19 @@ footer p {
     transition: none !important;
   }
 }
+
+/* Immagine dell'header nelle sue proporzioni originali */
+
+.parte-superiore-header .decorazione-header {
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  border-radius: 0;
+  background: none;
+}
+
+.decorazione-header img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
