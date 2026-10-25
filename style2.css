@@ -102,7 +102,7 @@ img {
   align-items: center;
 }
 
-/* Immagine iniziale intera, senza ritaglio */
+/* Spirale usata come immagine di sfondo */
 
 .decorazione-header {
   width: 100%;
@@ -112,6 +112,40 @@ img {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+/* Compatibilità con un tag img dentro decorazione-header */
+
+.parte-superiore-header .decorazione-header:has(> img) {
+  height: auto;
+  min-width: 0;
+  background: none;
+}
+
+.decorazione-header > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+}
+
+/* Spirale inserita con la nuova classe dedicata */
+
+.spirale-header {
+  width: 100%;
+  min-width: 0;
+  align-self: center;
+}
+
+.spirale-header img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
 }
 
 .identita-sito {
@@ -142,6 +176,28 @@ img {
   color: var(--testo);
   font-size: 0.9rem;
   letter-spacing: 0.045em;
+}
+
+/* Logo grafico, se presente nell'HTML */
+
+.logo.logo-con-immagine {
+  display: inline-block;
+  width: 170px;
+  max-width: 100%;
+  line-height: 0;
+  letter-spacing: normal;
+}
+
+.immagine-logo {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.logo-con-immagine:focus-visible {
+  outline: 2px solid var(--viola);
+  outline-offset: 6px;
+  border-radius: 8px;
 }
 
 /* Menu principale */
@@ -290,13 +346,25 @@ p {
   text-transform: uppercase;
 }
 
-/* Presentazione */
+/* Presentazione: Salute mentale */
 
 .testo-presentazione p {
   max-width: 600px;
   color: var(--viola);
   font-size: 1.25rem;
 }
+
+/* Testo giustificato: Salute mentale e Metodo */
+
+.presentazione .testo-presentazione p,
+#metodo p {
+  text-align: justify;
+  text-align-last: start;
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
+
+/* Immagini del contenuto */
 
 .immagine-separatrice {
   display: block;
@@ -702,7 +770,7 @@ p {
   transform: translateY(-5px);
 }
 
-/* Contatti e siti affiliati */
+/* Contatti */
 
 #contatti {
   padding: 70px 24px;
@@ -746,17 +814,30 @@ p {
   line-height: 1.6;
 }
 
-.link-email {
+/* Email, WhatsApp e Instagram */
+
+.link-email,
+.link-instagram {
   color: var(--viola);
   font-weight: 600;
   text-decoration: none;
   border-bottom: 1px solid currentColor;
   overflow-wrap: anywhere;
+  transition: color 200ms ease;
 }
 
 .link-email:hover,
-.link-email:focus-visible {
+.link-email:focus-visible,
+.link-instagram:hover,
+.link-instagram:focus-visible {
   color: var(--viola-scuro);
+}
+
+.link-email:focus-visible,
+.link-instagram:focus-visible {
+  outline: 2px solid var(--viola);
+  outline-offset: 4px;
+  border-radius: 2px;
 }
 
 .sedi-contatti {
@@ -777,6 +858,8 @@ p {
   padding: 0;
   list-style: none;
 }
+
+/* Siti affiliati */
 
 #siti-affiliati {
   max-width: 850px;
@@ -884,6 +967,10 @@ footer p {
     height: 140px;
   }
 
+  .spirale-header {
+    order: 2;
+  }
+
   .navigazione-principale {
     gap: 10px 18px;
     padding-top: 18px;
@@ -891,6 +978,10 @@ footer p {
 
   .logo {
     font-size: 2.5rem;
+  }
+
+  .logo.logo-con-immagine {
+    width: 135px;
   }
 
   .nome-professionista {
@@ -997,52 +1088,4 @@ footer p {
     scroll-behavior: auto;
     transition: none !important;
   }
-}
-
-/* Immagine dell'header nelle sue proporzioni originali */
-
-.parte-superiore-header .decorazione-header {
-  width: 100%;
-  height: auto;
-  min-width: 0;
-  border-radius: 0;
-  background: none;
-}
-
-.decorazione-header img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-/* Collegamento Instagram nella sezione Contatti */
-
-.link-instagram {
-  color: var(--viola);
-  font-weight: 600;
-  text-decoration: none;
-  border-bottom: 1px solid currentColor;
-  overflow-wrap: anywhere;
-  transition: color 200ms ease;
-}
-
-.link-instagram:hover,
-.link-instagram:focus-visible {
-  color: var(--viola-scuro);
-}
-
-.link-instagram:focus-visible {
-  outline: 2px solid var(--viola);
-  outline-offset: 4px;
-  border-radius: 2px;
-}
-
-/* Testo giustificato: Salute mentale e Metodo */
-
-.presentazione .testo-presentazione p,
-#metodo p {
-  text-align: justify;
-  text-align-last: start;
-  hyphens: auto;
-  overflow-wrap: break-word;
 }
