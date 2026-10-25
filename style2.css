@@ -1014,3 +1014,25 @@ footer p {
   width: 100%;
   height: auto;
 }
+
+/* Collegamento Instagram nella sezione Contatti */
+
+.link-instagram {
+  color: var(--viola);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  overflow-wrap: anywhere;
+  transition: color 200ms ease;
+}
+
+.link-instagram:hover,
+.link-instagram:focus-visible {
+  color: var(--viola-scuro);
+}
+
+.link-instagram:focus-visible {
+  outline: 2px solid var(--viola);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
