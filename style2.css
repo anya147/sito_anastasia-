@@ -94,12 +94,29 @@ img {
 }
 
 /* Immagine e identità */
-
 .parte-superiore-header {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 48px;
-  align-items: center;
+display: grid;
+grid-template-columns: minmax(0, 1fr) auto;
+gap: 48px;
+align-items: center;
+}
+.decorazione-header {
+width: 100%;
+height: 120px;
+border-radius: 18px;
+background-image: url("images/im11.jpg");
+background-size: cover;
+background-position: center;
+}
+/* Versione mobile */
+
+@media (max-width: 600px) {
+  .decorazione-header {
+    height: 140px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 }
 /* Immagine iniziale intera, senza tagliare la spirale */
 
