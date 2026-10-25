@@ -131,7 +131,7 @@ img {
   border-radius: 0;
 }
 
-/* Spirale inserita con la nuova classe dedicata */
+/* Spirale inserita con la classe dedicata */
 
 .spirale-header {
   width: 100%;
@@ -354,14 +354,29 @@ p {
   font-size: 1.25rem;
 }
 
-/* Testo giustificato: Salute mentale e Metodo */
+/* Salute mentale e Metodo:
+   testo giustificato senza sillabazione */
 
 .presentazione .testo-presentazione p,
 #metodo p {
   text-align: justify;
   text-align-last: start;
-  hyphens: auto;
-  overflow-wrap: break-word;
+  -webkit-hyphens: none;
+  hyphens: none;
+  word-break: normal;
+  overflow-wrap: normal;
+  white-space: normal;
+}
+
+/* Mantiene la stessa impostazione anche in eventuali
+   elementi inseriti dentro i paragrafi */
+
+.presentazione .testo-presentazione p *,
+#metodo p * {
+  -webkit-hyphens: none;
+  hyphens: none;
+  word-break: normal;
+  overflow-wrap: normal;
 }
 
 /* Immagini del contenuto */
@@ -375,13 +390,22 @@ p {
   object-fit: cover;
 }
 
+/* Allineamento al bordo sinistro dei paragrafi */
+
 .immagine-presentazione {
   display: block;
-  width: min(calc(100% - 48px), 760px);
+  width: 100%;
+  max-width: 680px;
   height: auto;
-  margin: 70px auto;
+  margin: 70px 0;
   border-radius: 18px;
   object-fit: cover;
+}
+
+/* Stessa larghezza massima del testo introduttivo */
+
+.presentazione > .immagine-presentazione {
+  max-width: 600px;
 }
 
 /* Approccio */
@@ -996,6 +1020,10 @@ footer p {
     padding-top: 72px;
   }
 
+  .immagine-presentazione {
+    margin: 40px 0;
+  }
+
   #approccio {
     margin-left: -6.8%;
     margin-right: -6.8%;
@@ -1087,48 +1115,5 @@ footer p {
   *::after {
     scroll-behavior: auto;
     transition: none !important;
-  }
-}
-
-/* Salute mentale e Metodo:
-   testo giustificato senza spezzare le parole */
-
-.presentazione .testo-presentazione p,
-#metodo p {
-  text-align: justify;
-  text-align-last: start;
-
-  -webkit-hyphens: none;
-  hyphens: none;
-
-  word-break: normal;
-  overflow-wrap: normal;
-  white-space: normal;
-}
-
-/* Immagini del contenuto:
-   bordo sinistro allineato all'inizio dei paragrafi */
-
-.immagine-presentazione {
-  display: block;
-  width: 100%;
-  max-width: 680px;
-  height: auto;
-  margin: 70px 0;
-  border-radius: 18px;
-}
-
-/* Immagine della sezione Salute mentale:
-   stessa larghezza massima dei suoi paragrafi */
-
-.presentazione > .immagine-presentazione {
-  max-width: 600px;
-}
-
-/* Spaziatura delle immagini su telefono */
-
-@media (max-width: 600px) {
-  .immagine-presentazione {
-    margin: 40px 0;
   }
 }
