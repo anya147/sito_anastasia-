@@ -1089,3 +1089,46 @@ footer p {
     transition: none !important;
   }
 }
+
+/* Salute mentale e Metodo:
+   testo giustificato senza spezzare le parole */
+
+.presentazione .testo-presentazione p,
+#metodo p {
+  text-align: justify;
+  text-align-last: start;
+
+  -webkit-hyphens: none;
+  hyphens: none;
+
+  word-break: normal;
+  overflow-wrap: normal;
+  white-space: normal;
+}
+
+/* Immagini del contenuto:
+   bordo sinistro allineato all'inizio dei paragrafi */
+
+.immagine-presentazione {
+  display: block;
+  width: 100%;
+  max-width: 680px;
+  height: auto;
+  margin: 70px 0;
+  border-radius: 18px;
+}
+
+/* Immagine della sezione Salute mentale:
+   stessa larghezza massima dei suoi paragrafi */
+
+.presentazione > .immagine-presentazione {
+  max-width: 600px;
+}
+
+/* Spaziatura delle immagini su telefono */
+
+@media (max-width: 600px) {
+  .immagine-presentazione {
+    margin: 40px 0;
+  }
+}
