@@ -1036,3 +1036,13 @@ footer p {
   outline-offset: 4px;
   border-radius: 2px;
 }
+
+/* Testo giustificato: Salute mentale e Metodo */
+
+.presentazione .testo-presentazione p,
+#metodo p {
+  text-align: justify;
+  text-align-last: start;
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
