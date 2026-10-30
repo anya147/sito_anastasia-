@@ -1117,3 +1117,34 @@ footer p {
     transition: none !important;
   }
 }
+/* Detailed Method and Approach pages */
+
+.pagina-approfondimento {
+  max-width: 900px;
+}
+
+.pagina-approfondimento h1 {
+  margin-bottom: 32px;
+}
+
+.pagina-approfondimento h2 {
+  margin-top: 42px;
+}
+
+.pagina-approfondimento p {
+  max-width: 680px;
+  text-align: justify;
+  text-align-last: start;
+  -webkit-hyphens: none;
+  hyphens: none;
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+.pagina-approfondimento .etichetta {
+  text-align: left;
+}
+
+.pagina-approfondimento .pulsante-secondario {
+  margin-top: 32px;
+}
